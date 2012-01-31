@@ -29,22 +29,28 @@
     int numberOfWineBottlesOrdered = 0;
     
     
+    
     /* Set dinnerPrice to be the cost of:
         1 entree per person
         1 dessert per person
         1 appetizer for every 2 people 
-        1 bottle of wine for every 4 people. 
+        1 bottle of wine for every 4 people.
      
      Make sure to also calculate the tax and tip correctly, and feel free to use the numberOfXXXXXOrdered variables to help with your calculations;
      */
+
+    numberOfAppetizersOrdered = numberOfGuests/2;
+    numberOfDessertsOrdered = numberOfGuests;
+    numberOfEntreesOrdered = numberOfGuests;
+    numberOfWineBottlesOrdered = numberOfGuests/4;
     
-    // *********************   
-    // Your code goes here
-    // *********************
+    dinnerPrice = entreePrice*numberOfEntreesOrdered + appetizerPrice*numberOfAppetizersOrdered + dessertPrice*numberOfDessertsOrdered + winePrice*numberOfWineBottlesOrdered;
     
+    tip=tipRate*dinnerPrice;
+    taxes=dinnerPrice*taxRate;
     
     // Print the dinner price
-    NSLog(@"Dinner for a family of %d costs $%.2f. The tip should be $%.2f and the taxes will be $%.2f", numberOfGuests, dinnerPrice, tip, taxes);
+    NSLog(@"Dinner for a family of %d costs $%.2f. The tip should be $%.2f and the taxes will be $%.2f.", numberOfGuests, dinnerPrice, tip, taxes);
     return dinnerPrice;
     
 }
