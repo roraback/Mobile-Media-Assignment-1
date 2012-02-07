@@ -7,17 +7,18 @@
 
 @implementation Restaurant
 
--(float) priceOfDinnerForGuests:(int)numberOfGuests
+-(float) priceOfDinner
 {
     float entreePrice = 22.50;
     float appetizerPrice = 11.00;
     float dessertPrice = 5.50;
     float winePrice = 34.25;
     
-    //numberOfGuests = 6;
+    int numberOfGuests = 4;
     
     float taxRate = .0875;
     float tipRate = .2;
+    
     //These variables will be replaced by calculated amounts based on the above
     float dinnerPrice = 0.0;
     float tip = 0.0;
@@ -38,10 +39,10 @@
      Make sure to also calculate the tax and tip correctly, and feel free to use the numberOfXXXXXOrdered variables to help with your calculations;
      */
 
-    numberOfAppetizersOrdered = ceil((float)numberOfGuests/2.0);
+    numberOfAppetizersOrdered = numberOfGuests/2;
     numberOfDessertsOrdered = numberOfGuests;
     numberOfEntreesOrdered = numberOfGuests;
-    numberOfWineBottlesOrdered = ceil((float)numberOfGuests/4.0);
+    numberOfWineBottlesOrdered = numberOfGuests/4;
     
     dinnerPrice = entreePrice*numberOfEntreesOrdered + appetizerPrice*numberOfAppetizersOrdered + dessertPrice*numberOfDessertsOrdered + winePrice*numberOfWineBottlesOrdered;
     
@@ -50,18 +51,16 @@
     
     // Print the dinner price
     NSLog(@"Dinner for a family of %d costs $%.2f. The tip should be $%.2f and the taxes will be $%.2f.", numberOfGuests, dinnerPrice, tip, taxes);
-    // Dinner for a family of 6 costs $269.50. The tip should be $53.90 and the taxes will be $23.58. - Double-checked on a calculator.
-
     return dinnerPrice;
     
 }
-float total=0;
 
 
 
 - (id)init {
     self = [super init];
     if (self) {
+<<<<<<< HEAD
         float priceForFamily = [self priceOfDinnerForGuests:4];
 //        total += priceForFamily;
     }
@@ -75,6 +74,10 @@ float total=0;
     }
     
 
+=======
+        float priceForFamily = [self priceOfDinner];
+    }
+>>>>>>> parent of 6d16592... Finished most of Assignment 1 Part 2
     return self;
 }
 
