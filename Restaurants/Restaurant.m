@@ -57,48 +57,23 @@
 }
 float total=0;
 
+
+
 - (id)init {
     self = [super init];
     if (self) {
         float priceForFamily = [self priceOfDinnerForGuests:4];
-        total += priceForFamily;
+//        total += priceForFamily;
     }
     if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:3];
-        total += priceForFamily;
+        float priceForTenTables = [self priceOfDinnerForGuests:4] + [self priceOfDinnerForGuests:3] + [self priceOfDinnerForGuests:5] + [self priceOfDinnerForGuests:2] + [self priceOfDinnerForGuests:7] + [self priceOfDinnerForGuests:4] + [self priceOfDinnerForGuests:4] + [self priceOfDinnerForGuests:14] + [self priceOfDinnerForGuests:13] + [self priceOfDinnerForGuests:3];
+        float tip = .2*priceForTenTables;
+        float taxes = .0875*priceForTenTables;
+    NSLog(@"Dinner for 10 tables costs $%.2f. The total tips (assuming people are generous!) should be $%.2f and the total paid in taxes will be $%.2f.", priceForTenTables, tip, taxes);
+
+    
     }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:5];
-        total += priceForFamily;
-    }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:2];
-        total += priceForFamily;
-    }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:7];
-        total += priceForFamily;
-    }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:4];
-        total += priceForFamily;
-    }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:4];
-        total += priceForFamily;
-    }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:1];
-        total += priceForFamily;
-    }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:13];
-        total += priceForFamily;
-    }
-    if (self) {
-        float priceForFamily = [self priceOfDinnerForGuests:3];
-        total += priceForFamily;
-    }
+    
 
     return self;
 }
