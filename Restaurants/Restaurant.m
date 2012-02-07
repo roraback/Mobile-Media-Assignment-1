@@ -54,12 +54,16 @@
     return dinnerPrice;
     
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of 6d16592... Finished most of Assignment 1 Part 2
 
 - (id)init {
     self = [super init];
     if (self) {
+<<<<<<< HEAD
 <<<<<<< HEAD
         float priceForFamily = [self priceOfDinnerForGuests:4];
 //        total += priceForFamily;
@@ -74,6 +78,10 @@
     }
     
 
+=======
+        float priceForFamily = [self priceOfDinner];
+    }
+>>>>>>> parent of 6d16592... Finished most of Assignment 1 Part 2
 =======
         float priceForFamily = [self priceOfDinner];
     }
